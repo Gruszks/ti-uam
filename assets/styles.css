@@ -1,0 +1,50 @@
+header,
+section {
+  width: 800px;
+  margin: 0 auto;
+}
+
+header {
+  text-align: center;
+}
+
+header input {
+  font-size: 25px;
+  padding: 10px 5px;
+  width: 80%;
+  border: 1px solid #000;
+}
+
+section {
+  margin-top: 25px;
+}
+
+section ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+section ul li {
+  border-bottom: 1px solid #ccc;
+  font-size: 30px;
+}
+
+section ul li label {
+  display: block;
+  padding: 10px;
+  cursor: pointer;
+}
+
+section ul li label:hover {
+  background-color: #f7f6f6;
+}
+
+section ul li input {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+section ul li.done label {
+  text-decoration: line-through;
+}
