@@ -32,13 +32,11 @@
     },
 
     restoreToDoList: function() {
-      var self = this;
-
       this.toDoList = document.createElement('ul');
       this.toDoListContainer.appendChild(this.toDoList);
       this.toDoItems.forEach(function(toDo) {
-        self.addToDo(toDo);
-      });
+        this.addToDo(toDo);
+      }, this);
     },
 
     getToDoList: function() {
@@ -84,7 +82,7 @@
       input.addEventListener('click', function(e) {
         toDo.done = li.classList.toggle('done');
         self.saveToDoList();
-      });
+      }, false);
     }
   }
 
