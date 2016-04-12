@@ -28,16 +28,18 @@ section ul {
 section ul li {
   border-bottom: 1px solid #ccc;
   font-size: 30px;
+  padding: 0 10px;
+}
+
+section ul li:hover {
+  background-color: #f7f6f6;
 }
 
 section ul li label {
-  display: block;
-  padding: 10px;
+  display: inline-block;
   cursor: pointer;
-}
-
-section ul li label:hover {
-  background-color: #f7f6f6;
+  width: 95%;
+  padding: 10px 0;
 }
 
 section ul li input {
@@ -47,4 +49,11 @@ section ul li input {
 
 section ul li.done label {
   text-decoration: line-through;
+}
+
+section ul li span {
+  display: inline-block;
+  width: 5%;
+  text-align: center;
+  cursor: pointer;
 }

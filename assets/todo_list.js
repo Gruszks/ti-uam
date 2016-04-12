@@ -56,8 +56,10 @@
       var label = document.createElement('label');
       var li = document.createElement('li');
       var text = document.createTextNode(' ' + toDo.text);
+      var remove = document.createElement('span');
 
       input.type = 'checkbox';
+      remove.innerHTML = 'X';
 
       if (toDo.done) {
         li.classList.add('done');
@@ -67,7 +69,8 @@
       label.appendChild(input);
       label.appendChild(text);
       li.appendChild(label);
-      this.bindToDoItem(li, input, toDo);
+      li.appendChild(remove);
+      this.bindToDoItem(li, input, toDo, remove);
       this.toDoList.appendChild(li);
 
       if (save) {
@@ -76,11 +79,19 @@
       }
     },
 
-    bindToDoItem: function(li, input, toDo) {
+    bindToDoItem: function(li, input, toDo, remove) {
       var self = this;
 
       input.addEventListener('click', function(e) {
         toDo.done = li.classList.toggle('done');
+        self.saveToDoList();
+      }, false);
+
+      remove.addEventListener('click', function(e) {
+        e.preventDefault();
+        var idx = Array.prototype.indexOf.call(self.toDoList.children, li);
+        self.toDoList.removeChild(li);
+        self.toDoItems.splice(idx, 1);
         self.saveToDoList();
       }, false);
     }
